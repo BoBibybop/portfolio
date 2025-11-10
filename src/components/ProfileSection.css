@@ -1,0 +1,90 @@
+/* ===== PROFILE IMAGE WITH RINGS ===== */
+.profile-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 1rem;
+}
+
+.profile-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--primary-cyan);
+  box-shadow: 
+    0 0 20px var(--glow-cyan),
+    inset 0 0 20px rgba(0, 255, 255, 0.2);
+  background: var(--darker-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+/* Animated Rings */
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid var(--primary-cyan);
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+.ring-outer {
+  width: 200px;
+  height: 200px;
+  animation: ringPulse 3s ease-in-out infinite;
+}
+
+.ring-inner {
+  width: 170px;
+  height: 170px;
+  animation: ringPulse 3s ease-in-out infinite reverse;
+}
+
+@keyframes ringPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 0.7;
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .profile-container {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .profile-image {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .ring-outer {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .ring-inner {
+    width: 125px;
+    height: 125px;
+  }
+}

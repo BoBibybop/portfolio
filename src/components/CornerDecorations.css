@@ -1,0 +1,307 @@
+/* ===== CORNER DECORATIONS ===== */
+.corner-decoration {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  opacity: 0.5;
+}
+
+.corner-decoration::before,
+.corner-decoration::after {
+  content: '';
+  position: absolute;
+  background: var(--primary-cyan);
+  box-shadow: 0 0 10px var(--glow-cyan);
+}
+
+.top-left {
+  top: 40px;
+  left: 40px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.top-left::before {
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 2px;
+}
+
+.top-left::after {
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 20px;
+}
+
+.top-right {
+  top: 40px;
+  right: 40px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.top-right::before {
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 2px;
+}
+
+.top-right::after {
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 20px;
+}
+
+.bottom-left {
+  bottom: 40px;
+  left: 40px;
+  border-right: none;
+  border-top: none;
+}
+
+.bottom-left::before {
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  height: 2px;
+}
+
+.bottom-left::after {
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 20px;
+}
+
+.bottom-right {
+  bottom: 40px;
+  right: 40px;
+  border-left: none;
+  border-top: none;
+}
+
+.bottom-right::before {
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 2px;
+}
+
+.bottom-right::after {
+  bottom: 0;
+  right: 0;
+  width: 2px;
+  height: 20px;
+}
+
+/* ===== CIRCULAR DECORATIONS ===== */
+.circular-decoration {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: 2px solid rgba(0, 255, 255, 0.2);
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: rotatePulse 8s linear infinite;
+}
+
+.circular-decoration::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--primary-cyan);
+  border-radius: 50%;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 15px var(--glow-cyan);
+  animation: orbitGlow 2s ease-in-out infinite alternate;
+}
+
+.top-center {
+  top: 20px;
+  left: 50%;
+  margin-left: -60px;
+  border-bottom: none;
+  animation: rotatePulseTopBottom 8s linear infinite;
+}
+
+.bottom-center {
+  bottom: 20px;
+  left: 50%;
+  margin-left: -60px;
+  border-top: none;
+  animation: rotatePulseTopBottom 8s linear infinite reverse;
+}
+
+.left-center {
+  left: 20px;
+  top: 50%;
+  margin-top: -60px;
+  border-right: none;
+  animation: rotatePulseLeftRight 8s linear infinite;
+  animation-delay: -2s;
+}
+
+.right-center {
+  right: 20px;
+  top: 50%;
+  margin-top: -60px;
+  border-left: none;
+  animation: rotatePulseLeftRight 8s linear infinite reverse;
+  animation-delay: -2s;
+}
+
+/* ===== HEXAGON DECORATIONS ===== */
+
+
+/* ===== FLOATING PARTICLES ===== */
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--primary-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--glow-cyan);
+  opacity: 0.6;
+}
+
+.particle-1 {
+  top: 20%;
+  left: 15%;
+  animation: floatParticle 8s ease-in-out infinite;
+}
+
+.particle-2 {
+  top: 70%;
+  right: 20%;
+  animation: floatParticle 10s ease-in-out infinite 2s;
+}
+
+.particle-3 {
+  bottom: 30%;
+  left: 25%;
+  animation: floatParticle 12s ease-in-out infinite 4s;
+}
+
+.particle-4 {
+  top: 40%;
+  right: 15%;
+  animation: floatParticle 9s ease-in-out infinite 6s;
+}
+
+/* ===== SCANNING LINES ===== */
+/* Scan lines */
+.scan-line {
+  position: fixed;
+  background: linear-gradient(90deg, transparent, var(--primary-cyan), transparent);
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.scan-horizontal {
+  left: 0;
+  width: 100%;
+  height: 2px;
+  animation: scanVertical 15s linear infinite;
+}
+
+.scan-vertical {
+  top: 0;
+  height: 100%;
+  width: 2px;
+  animation: scanHorizontal 12s linear infinite;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes rotatePulseTopBottom {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotatePulseLeftRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbitGlow {
+  0% {
+    box-shadow: 0 0 10px var(--glow-cyan);
+  }
+  100% {
+    box-shadow: 0 0 25px var(--glow-cyan), 0 0 40px var(--glow-cyan);
+  }
+}
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translate(20px, -20px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(40px, 0);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translate(20px, 20px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes scanHorizontal {
+  0%, 100% {
+    top: 20%;
+  }
+  50% {
+    top: 80%;
+  }
+}
+
+@keyframes scanVertical {
+  0%, 100% {
+    left: 20%;
+  }
+  50% {
+    left: 80%;
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .corner-decoration {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .circular-decoration {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .particle {
+    display: none;
+  }
+  
+  .scan-line {
+    display: none;
+  }
+}

@@ -1,0 +1,55 @@
+/* ===== MAIN TITLE ===== */
+.main-title {
+  font-family: var(--font-title);
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  color: var(--primary-cyan);
+  text-shadow: 
+    0 0 10px var(--glow-cyan),
+    0 0 20px var(--glow-cyan),
+    0 0 40px var(--glow-cyan),
+    0 0 80px rgba(0, 255, 255, 0.3);
+  animation: textGlow 2s ease-in-out infinite alternate;
+  margin: 0;
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 
+      0 0 10px var(--glow-cyan),
+      0 0 20px var(--glow-cyan),
+      0 0 40px var(--glow-cyan);
+  }
+  100% {
+    text-shadow: 
+      0 0 20px var(--glow-cyan),
+      0 0 30px var(--glow-cyan),
+      0 0 60px var(--glow-cyan),
+      0 0 100px rgba(0, 255, 255, 0.5);
+  }
+}
+
+/* ===== SUBTITLE ===== */
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5em;
+  color: rgba(0, 255, 255, 0.7);
+  text-transform: uppercase;
+  margin: -1rem 0 0 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 3rem;
+    letter-spacing: 0.2em;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+  }
+}

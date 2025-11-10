@@ -1,0 +1,7 @@
+/* ===== HOME PAGE STYLES ===== */
+/* Note: Home page uses fixed height without scroll */
+
+/* Add more space before navigation on home page */
+.navigation-menu {
+  margin-top: 4rem;
+}
