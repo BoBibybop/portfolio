@@ -23,7 +23,7 @@ function Projects() {
         
         <div className="projects-grid">
           <a 
-            href="https://forge.iut-larochelle.fr/willbot" 
+            href="https://github.com/BoBibybop/WillBot" 
             className="project-card project-link"
             target="_blank"
             rel="noopener noreferrer"
@@ -38,28 +38,28 @@ function Projects() {
           </a>
           
           <a 
-            href="https://forge.iut-larochelle.fr/music-app-1000et1notes" 
+            href="https://github.com/BoBibybop/Hnefatafl" 
             className="project-card project-link"
             target="_blank"
             rel="noopener noreferrer"
           >
             <div className="project-icon">💻</div>
-            <h3 className="project-title">Music APP</h3>
-            <p className="project-description">Création en équipe d'une WebAPP de gestion et d'inscription à une école de musique. Ce projet à été fait en équipe de 4</p>
-            <div className="project-tech">React • FastAPI • PostgreSQL</div>
+            <h3 className="project-title">Hnefatafl</h3>
+            <p className="project-description">Création d'une desktop app en console d'un jeu de Hnefatafl</p>
+            <div className="project-tech">C++</div>
             <div className="project-link-indicator">Voir sur GitLab →</div>
           </a>
           
           <a 
-            href="https://forge.iut-larochelle.fr/npaulmie/pokemon" 
+            href="https://github.com/BoBibybop/h2r-hotel-bdd" 
             className="project-card project-link"
             target="_blank"
             rel="noopener noreferrer"
           >
             <div className="project-icon">🕹️</div>
-            <h3 className="project-title">PokeFight</h3>
-            <p className="project-description">Création d'une app desktop de combat de pokemon. On peut créer ses propres équipes, pokémon et affronter d'autres joueurs.</p>
-            <div className="project-tech">C++</div>
+            <h3 className="project-title">Hotel Database</h3>
+            <p className="project-description">Création d'une app desktop de gestion d'hôtel. On peut gérer les réservations, les clients et les chambres.</p>
+            <div className="project-tech">SQL • Python</div>
             <div className="project-link-indicator">Voir sur GitLab →</div>
           </a>
         </div>
